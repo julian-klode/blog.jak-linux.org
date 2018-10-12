@@ -33,7 +33,7 @@ jak-devel
 
     Development packages
 
-jak-machine-<X>
+jak-machine-&lt;X&gt;
 
     The meta package defining the computer X
 
