@@ -2,7 +2,8 @@ baseURL = "https://blog.jak-linux.org"
 languageCode = "en-us"
 title = "Blog of Julian Andres Klode"
 theme = "ernest"
-
+canonifyURLs = true
+relativeURLS = false
 copyright = """
 Copyright © 2018 Julian Andres Klode, articles licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.<br/>
 Comments are provided by <a href="https://joinmastodon.org">Mastodon</a> and copyright of their authors.<br/><br/>
