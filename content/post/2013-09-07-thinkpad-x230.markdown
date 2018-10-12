@@ -1,0 +1,18 @@
+---
+author: juliank
+date: 2013-09-07 16:43:20+00:00
+draft: false
+title: 'Review: ThinkPad X230'
+type: post
+url: /2013/09/07/thinkpad-x230/
+categories:
+- General
+---
+
+This week, a few hours after Lenovo announced the X240, I bought an X230. Normally, the X230 model I bought comes with a Core i5-3320M CPU, 4GB RAM, 500GB HDD. My model was a special set including a second 4GB RAM stick and a 128 GB mSATA Plextor SSD. It came without Windows; and the ThinkVantage button is black instead of blue and has no label.
+
+I put a fresh installation of unstable on it and tweaked it to save more power when on battery (enabled RC6++, and enabled autosuspend and other powertop suggestions with a script in /etc/pm/power.d); and configured hdparm.conf to put my hard disk into standby after 5 seconds (it's only used for big data anyway, so most of the time it is unused). It now consumes 5W in idle with minimum brightness, and 8-10W with brightness 13 of 15. Consumption when surfing is 10 - 15 watts. Booting from grub to gdm is fast, I did not measure it, but it probably took about 5 seconds.
+
+The IPS screen looks really good. Much much much better than the screen in my 2010 Edge 15 (I [reviewed](http://juliank.wordpress.com/2010/07/05/review-lenovo-thinkpad-edge-15/) that one in 2010). It seems a bit more glossy than that one, but still matte. Keyboard is good as well. The touch pad is crap however. All hardware seems to work.
+
+Comparison to the X240 for others who think about buying one of them: The X240 is lighter and thinner (it's an Ultrabook) and has an optional FullHD 12.5 inch screen. It also offers a much larger touchpad and palm rest. But compared to the X230, the X240 lacks many things: No dedicated buttons for the trackpoint (you need to use the click-pad), it's limited at 8GB RAM, uses a slower low-voltage Haswell CPU, and it uses the new M.2 connector (probably supporting only the shortest cards) instead of mini-PCIe, so it's not really possible to add an additional SSD currently; as M.2 SSDs do not seem to be available yet. I also do not know whether the X240 offers ThinkLight or LEDs for hard drive activity and similar.

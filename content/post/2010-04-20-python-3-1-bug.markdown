@@ -1,0 +1,14 @@
+---
+author: juliank
+date: 2010-04-20 12:50:39+00:00
+draft: false
+title: 'Python 3.1 bug: Objects in modules (m_size=-1) not deallocated'
+type: post
+url: /2010/04/20/python-3-1-bug/
+categories:
+- Python
+---
+
+Last year, in July, I reported an issue to Python's issue tracker. This issue can be seen at [http://bugs.python.org/issue6483](http://bugs.python.org/issue6483). Since then, there has been no action on this bug from the developers.
+
+The bug describes that every object stored in a module will not be deallocated if the module is deallocated and it's m_size = -1 (which it should be if the module has no state). The problem seems to be that Python copies the dictionary of the module but forgets to decrease the reference count of the copy when the module is deallocated. This bug may have serious impact if objects are stored in the module which write status to a file when they are deallocated, because the deallocation functions are never called.

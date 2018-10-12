@@ -1,0 +1,18 @@
+---
+author: juliank
+date: 2009-10-25 22:28:35+00:00
+draft: false
+title: I'm back
+type: post
+url: /2009/10/25/im-back/
+categories:
+- General
+---
+
+I returned to Germany from my vacation in Greece yesterday, and I just installed my new hard drive into my laptop. The old Hitachi hard drive had some bad sectors after a very long usage time (compared to my other disks) - we'll see how the new Samsung SpinPoint M7 will work. Another side benefit is the upgrade from 120GB to 500GB which means I don't have to delete files during the next months. It is also much faster (hdparm -t was 80MB/s, 2 times faster than the old one).
+
+I'm currently running the release candidate of Ubuntu 9.10 "Karmic Koala" on this system, but I expect to return to my full Debian unstable developer environment during the next week(s). Karmic seems to be pretty stable already, but I have experienced problems with PulseAudio and my PCM control getting set to +13dB which is horrible.
+
+I will probably also pre-order a Nokia N900 soon, which will be my largest investment this year - but I really need a new mobile phone, camera and music player. And not to forget the ability to develop software for it, and testing my software on those less powerful devices (compared to my laptop).
+
+All in all, I'm back and soon ready to hack again.

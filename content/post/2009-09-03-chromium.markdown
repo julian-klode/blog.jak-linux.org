@@ -1,0 +1,14 @@
+---
+author: juliank
+date: 2009-09-03 14:12:34+00:00
+draft: false
+title: Chromium
+type: post
+url: /2009/09/03/chromium/
+categories:
+- General
+---
+
+I have just switched to Chromium as my primary browser. I am running the daily-built version from the Ubuntu Jaunty PPA at [https://edge.launchpad.net/~chromium-daily/+archive/ppa](https://edge.launchpad.net/~chromium-daily/+archive/ppa) on my Debian unstable box. It seems quite stable, plugins are also working (with the --enable-plugins option) and it can use the system's GTK+ theme for most parts (the buttons, etc. inside webpages are not rendered using GTK+ yet, but the UI is). It currently cannot print and it also has some formatting issues on some websites, and it's not passing the ACID3 test yet (there is a 'X' in the top-right corner). I could have switched to Midori instead, but Midori is missing a cache it seems (the option can not be enabled).
+
+I ran the V8 and SunSpider benchmarks to compare Iceweasel 3.5, Midori 0.1.9 (using WebKit GTK+ 1.1.12) and Chromium 4.0.206.0 (r25168). The result was that Iceweasel was 10x times slower than the others in the V8 benchmark and about 5 times slower in the SunSpider benchmark. The others were almost equally fast, but Chromium won the V8 benchmark with 2338 points compared to Midori's 1666. More details are in the PDF _[Browser Performance](http://juliank.files.wordpress.com/2009/09/browser-performance.pdf), which should have been an ODP, but uploading ODPs is not allowed on wordpress.com. I also ran the V8 benchmark on Arora some time ago, but it was almost as slow as iceweasel. All tests were done on my laptop running Debian GNU/Linux unstable (amd64 architecture)._

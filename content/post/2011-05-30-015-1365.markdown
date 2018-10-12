@@ -1,0 +1,36 @@
+---
+author: juliank
+date: 2011-05-30 17:36:43+00:00
+draft: false
+title: 0x15 + 1/365
+type: post
+url: /2011/05/30/015-1365/
+categories:
+- Debian
+- General
+- Ubuntu
+tags:
+- '42'
+- ac100
+- apt
+- arm
+- armel
+- birthday
+- Hitchhiker's Guide to the Galaxy
+- python
+- python-apt
+- tegra
+- tegra2
+- toshiba
+---
+
+Yesterday was my 21st birthday, and I received all "Hitchhiker's Guide to the Galaxy" novels, the five ones in one book, and the sixth one written by Eoin Colfer in another book. Needless to say, the first book weights more than an N900. I did not read them yet, so now is the perfect chance to do so. Yes, I did not know that 25th is towel day, sorry for that.
+
+[![](http://juliank.files.wordpress.com/2011/05/20110529_001.jpg?w=300)
+](http://juliank.files.wordpress.com/2011/05/20110529_001.jpg)
+
+I also bought a Toshiba AC100 before my birthday, a Tegra 2 based notebook/netbook/"web companion" with 1 GHz dual core ARM Cortex A9 chip and 512 MB RAM. It runs Android by default, and had a price of 160€ which is low compared to anything else with Cortex A9. It currently runs Ubuntu 11.04 with a specialised kernel 2.6.37 from time to time, without sound and accelerated video (and not functioning HDMI). Mostly waiting for Nvidia to release a new binary blob for the video part (And yes, if you just want to build packages, you can probably get happy without those things).
+
+Another thing happening last week is the upload of python-apt 0.8.0 to unstable, marking the beginning (or end) of the API transition I started more than a year ago. Almost all packages not supporting it have proper Breaks in python-apt [most of them already fixed, only 2 packages remaining, one of which is "maintained" (well, not really maintained right now) by me], but there may be some which do not work correctly despite being fixed (or at least thought to be fixed).
+
+If you know any other interesting thing I did last week, leave a comment, I wrote enough now. And yes, Wordpress wants to write a multiplication sign instead of an x, so I had to use &#120 instead.

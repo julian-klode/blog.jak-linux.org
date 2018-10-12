@@ -1,0 +1,16 @@
+---
+author: juliank
+date: 2009-12-22 15:35:11+00:00
+draft: false
+title: Nokia N900
+type: post
+url: /2009/12/22/nokia-n900/
+categories:
+- General
+---
+
+Yesterday, an N900 I bought from Amazon Warehouse Deals arrived. The device is great, but I discovered today that the AV output only outputs sound on the right speaker and nothing on the left one. So it seems that I have to send it back and will thus not have a N900 during Christmas.
+
+Appart from that problem, the device works almost perfectly. The internet browsing experience is faboulus, the camera is good, and the device is fast; the screen is great and the speakers are great as well. The keyboard is easy to type with and you can type fast after a short time. The video player does not seem to like my H.264 files (the OpenMAX decoder fails whereas on my PC ffmpeg is able to play it).
+
+That's all for now, I'll write again when I have a N900 with working AV output.

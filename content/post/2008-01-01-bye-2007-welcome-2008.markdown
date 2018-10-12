@@ -1,0 +1,26 @@
+---
+author: juliank
+date: 2008-01-01 16:03:04+00:00
+draft: false
+title: Bye, 2007 - Welcome 2008!
+type: post
+url: /2008/01/01/bye-2007-welcome-2008/
+categories:
+- Debian
+- General
+- Ubuntu
+---
+
+April 2007, I joined the Fellowship of the Free Software Foundation Europe.
+
+I also became involved in the development of Debian GNU/Linux with my first package, aufs, sponsored by Daniel Baumann. This was the starting point for my Debian stuff.
+
+Now I maintain 6 packages in Debian. One of the most interesting packages is gnome-app-install, which will be part of the gnome-desktop task (already added to tasksel's list). Users will be able to install applications easily. It also activates the automatic codec installation, so users will be able to play most multimedia files easily.
+
+30th December, I finally got assigned my AM,  Martin Zobel-Helas (zobel), and I'm happy to be able to continue the NM process now.
+
+On the Ubuntu side, some things have happened, too. I merged several new versions of dir2ogg and a new aufs version, and became an Ubuntu Member on the 29th November.
+
+In 2008, I plan to complete the New Maintainer process and become an Ubuntu MOTU. I will continue my packaging stuff, and will merge new features from Debian to Ubuntu and from Ubuntu to Debian.
+
+A happy new year to everyone and sorry for blogging this such late.

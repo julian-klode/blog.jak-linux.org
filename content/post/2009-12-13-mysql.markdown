@@ -1,0 +1,16 @@
+---
+author: juliank
+date: 2009-12-13 12:51:02+00:00
+draft: false
+title: MySQL
+type: post
+url: /2009/12/13/mysql/
+categories:
+- General
+---
+
+If Oracle owned MySQL, it would not make a big difference with regards to competition on the database market. Oracle would then own 2 relational databases. But there is also the BSD-licensed PostgreSQL, the world's most advanced open source database with several enhanced products from companies.
+
+If Oracle closed MySQL, the community would step in. I truly believe that the free software community is strong enough to support MySQL. There already is [MariaDB](http://askmonty.org/) and I believe that this project could serve as the base in case Oracle closes MySQL or stops MySQL completely. The community was strong enough to build complete operating systems and maintain them, so it should not be that hard to support one database.
+
+All in all, I don't see how Oracle buying Sun (and thus MySQL) could negatively influence competition in the database market, and I would therefore recommend the EC to approve the Oracle-Sun deal as it, without imposing any conditions on Oracle.

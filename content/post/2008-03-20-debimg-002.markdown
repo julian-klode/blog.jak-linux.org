@@ -1,0 +1,23 @@
+---
+author: juliank
+date: 2008-03-20 23:06:03+00:00
+draft: false
+title: debimg 0.0.2 builds netinst in less than 4 seconds
+type: post
+url: /2008/03/21/debimg-002/
+categories:
+- Debian
+- debimg
+---
+
+debimg 0.0.2 has a new high speed dependency resolver and support for local repositories.
+
+With these new features, debimg is now able to produce netinst images in less than 4 seconds.
+
+BTW, you can easily build your own disk. Simply unpack the tarball, change the mirror to your one, and run ./debimg debimg.cfg. This should give you an i386 netinst disk.
+
+Get debimg 0.0.2 from [http://users.alioth.debian.org/~jak-guest/debimg_0.0.2.tar.gz](http://users.alioth.debian.org/~jak-guest/debimg_0.0.2.tar.gz)
+
+Fetch daily-built images at [http://jak-linux.org/cdimage/daily-builds/testing/](http://jak-linux.org/cdimage/daily-builds/testing/).
+
+For more information, see[ http://lists.debian.org/debian-cd/2008/03/msg00114.html](http://lists.debian.org/debian-cd/2008/03/msg00114.html)

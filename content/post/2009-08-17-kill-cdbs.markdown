@@ -1,0 +1,12 @@
+---
+author: juliank
+date: 2009-08-17 21:34:21+00:00
+draft: false
+title: kill cdbs
+type: post
+url: /2009/08/17/kill-cdbs/
+categories:
+- Debian
+---
+
+Let's kill CDBS and help debhelper 7 gain world domination!

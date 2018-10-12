@@ -1,0 +1,16 @@
+---
+author: juliank
+date: 2008-10-25 19:56:06+00:00
+draft: false
+title: aufs 0+20081023-1 uploaded to experimental
+type: post
+url: /2008/10/25/aufs-20081023-1/
+categories:
+- Debian
+---
+
+I just uploaded a new upstream snapshot of aufs (another unionFS) to experimental. But it is really more than just a new upstream snapshot:
+
+First of all, this release includes patches written by Jeff Mahoney <jeffm@suse.com>. These patches enable the usage of NFSv2 and NFSv3 file systems as branches, even on the standard Debian kernel. The package does not support NFSv4 yet, but will support it at a later point (but only with a patched kernel) - the code exists, it's just not enabled yet.
+
+This release also removes support for pre-lenny Kernels (<2.6.26) and uses quilt instead of dpatch. It also removes any AppArmor support for the moment, but this may be added back later.
