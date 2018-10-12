@@ -1,4 +1,4 @@
-baseURL = "https://jak-linux.org/blog"
+baseURL = "https://blog.jak-linux.org"
 languageCode = "en-us"
 title = "WIP of Julian's blog"
 theme = "ernest"
@@ -30,7 +30,7 @@ url = "https://twitter.com/JulianKlode"
 fa_icon = "fab fa-twitter"
 
 [[params.social]]
-url = "/blog/index.xml"
+url = "/index.xml"
 fa_icon = "fa fa-rss"
 
 
