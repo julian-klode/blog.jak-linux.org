@@ -18,7 +18,7 @@ Viewing the statistics for my blog, I have come to some conclusions about what t
 </tr>
 <tr class="alternate" >
 
-<td class="label" >[Short review: Fedora 10 and Ubuntu 8.10](../2008/12/19/short-review-fedora-10-and-ubuntu-810/)
+<td class="label" >[Short review: Fedora 10 and Ubuntu 8.10](/2008/12/19/short-review-fedora-10-and-ubuntu-810/)
 </td>
 
 <td class="views" >2,310
@@ -26,7 +26,7 @@ Viewing the statistics for my blog, I have come to some conclusions about what t
 </tr>
 <tr >
 
-<td class="label" >[A small benchmark: Bazaar, Git, Mercuria](../2008/01/13/a-small-benchmark-bazaar-git-mercurial/)
+<td class="label" >[A small benchmark: Bazaar, Git, Mercuria](/2008/01/13/a-small-benchmark-bazaar-git-mercurial/)
 </td>
 
 <td class="views" >2,112
@@ -34,7 +34,7 @@ Viewing the statistics for my blog, I have come to some conclusions about what t
 </tr>
 <tr class="alternate" >
 
-<td class="label" >[Fedora 9 & Kernel Mode Setting](../2008/04/20/fedora-9-preview/)
+<td class="label" >[Fedora 9 & Kernel Mode Setting](/2008/04/20/fedora-9-preview/)
 </td>
 
 <td class="views" >1,804
@@ -42,7 +42,7 @@ Viewing the statistics for my blog, I have come to some conclusions about what t
 </tr>
 <tr >
 
-<td class="label" >[Gentoo destroying earth?](../2008/10/10/gentoo-destroying-earth/)
+<td class="label" >[Gentoo destroying earth?](/2008/10/10/gentoo-destroying-earth/)
 </td>
 
 <td class="views" >1,126
@@ -50,7 +50,7 @@ Viewing the statistics for my blog, I have come to some conclusions about what t
 </tr>
 <tr class="alternate" >
 
-<td class="label" >[Filesystems](../2008/12/19/filesystems/)
+<td class="label" >[Filesystems](/2008/12/19/filesystems/)
 </td>
 
 <td class="views" >1,093
@@ -59,7 +59,7 @@ Viewing the statistics for my blog, I have come to some conclusions about what t
 </tr>
 <tr >
 
-<td class="label" >[Python Speed: 'x in list' vs 'x in set'](../2008/04/29/python-speed-x-in-list-vs-x-in-set/)
+<td class="label" >[Python Speed: 'x in list' vs 'x in set'](/2008/04/29/python-speed-x-in-list-vs-x-in-set/)
 </td>
 
 <td class="views" >1,025
