@@ -1,0 +1,67 @@
+AddCharset utf-8 .html .css .php .txt .js .xml
+
+# Enable rewrites
+RewriteEngine On
+# Rewrite requests to canonical URI
+RewriteCond %{HTTP_HOST} !=blog.jak-linux.org
+RewriteRule (.*) https://blog.jak-linux.org/$1 [R=301,L]
+
+# Enforce https queries
+RewriteCond %{HTTPS} !=on
+RewriteCond %{ENV:HTTPS} !=on
+RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
+
+# Normalize away /index.html
+RewriteCond %{REQUEST_METHOD}  !=POST
+RewriteCond %{REQUEST_URI} ^(.*?/)/*index.html$
+RewriteCond %{REQUEST_FILENAME} -f                                                                                                                                                    
+RewriteRule . %1 [R=301,L]      
+
+# Normalize away // for directories
+RewriteCond %{REQUEST_METHOD}  !=POST
+RewriteCond %{REQUEST_URI} ^(.*?)(/{2,})(.*)$
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule . %1/%3 [R=301,L]
+
+# Normalize away // for files
+RewriteCond %{REQUEST_METHOD}  !=POST
+RewriteCond %{REQUEST_URI} ^(.*?)(/{2,})(.*)$
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule . %1/%3 [R=301,L]
+
+Header set Strict-Transport-Security "max-age=10886400" env=HTTPS
+Header set Cache-Control "max-age=300, public" 
+
+# 5 minutes for most static assets
+<filesMatch ".(css|jpg|jpeg|png|gif|js|ico)$">
+Header set Cache-Control "max-age=3600, public"
+</filesMatch>
+<IfModule mod_expires.c>
+ ExpiresActive On
+ ExpiresByType text/css "access plus 60 minutes"
+ ExpiresByType text/javascript "access plus 60 minutes"
+ ExpiresByType text/html "access plus 30 minutes"
+ ExpiresByType application/javascript "access plus 60 minutes"
+ ExpiresByType image/gif "access plus 60 minutes"
+ ExpiresByType image/jpeg "access plus 60 minutes"
+ ExpiresByType image/png "access plus 60 minutes"
+ ExpiresByType image/x-icon "access plus 60 minutes"
+</IfModule>
+
+
+# Enable compression
+<IfModule mod_deflate.c>
+ AddOutputFilterByType DEFLATE text/plain
+ AddOutputFilterByType DEFLATE text/html
+ AddOutputFilterByType DEFLATE text/xml
+ AddOutputFilterByType DEFLATE text/css
+ AddOutputFilterByType DEFLATE text/javascript
+ AddOutputFilterByType DEFLATE application/xml
+ AddOutputFilterByType DEFLATE application/xhtml+xml
+ AddOutputFilterByType DEFLATE application/rss+xml
+ AddOutputFilterByType DEFLATE application/atom_xml
+ AddOutputFilterByType DEFLATE application/javascript
+ AddOutputFilterByType DEFLATE application/x-javascript
+ AddOutputFilterByType DEFLATE application/x-shockwave-flash
+</IfModule>
+
