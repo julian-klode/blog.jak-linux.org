@@ -1,0 +1,3 @@
+[submodule "themes/ernest"]
+	path = themes/ernest
+	url = https://github.com/julian-klode/ernest
