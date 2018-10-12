@@ -1,6 +1,6 @@
 baseURL = "https://blog.jak-linux.org"
 languageCode = "en-us"
-title = "WIP of Julian's blog"
+title = "Blog of Julian Andres Klode"
 theme = "ernest"
 
 copyright = """
@@ -16,6 +16,7 @@ Powered by <a href="https://gohugo.io/tools/">Hugo</a>, the <a href="https://git
 
 [params]
 mastodonUser = "juliank"
+avatarImage = "/images/avatar.jpg"
 
 [[params.social]]
 url = "https://github.com/julian-klode"
