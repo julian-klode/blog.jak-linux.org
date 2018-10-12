@@ -1,3 +1,38 @@
-baseURL = "http://example.org/"
+baseURL = "https://jak-linux.org/blog"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "WIP of Julian's blog"
+theme = "ernest"
+
+copyright = """
+Copyright © 2018 Julian Andres Klode, articles licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.<br/>
+Comments are provided by <a href="https://joinmastodon.org">Mastodon</a> and copyright of their authors.<br/><br/>
+
+This website does not store any personally identifiable information. As part of standard web server
+access_log logging, it stores requests and the user agents and shortened IP addresses used to make
+them. It does, however, load some avatars from mastodon.<br/><br/>
+
+Powered by <a href="https://gohugo.io/tools/">Hugo</a>, the <a href="https://github.com/julian-klode/ernest/">Ernest</a> theme.
+"""
+
+[params]
+mastodonUser = "juliank"
+
+[[params.social]]
+url = "https://github.com/julian-klode"
+fa_icon = "fab fa-github"
+
+[[params.social]]
+url = "https://mastodon.social/@juliank"
+fa_icon = "fab fa-mastodon"
+
+[[params.social]]
+url = "https://twitter.com/JulianKlode"
+fa_icon = "fab fa-twitter"
+
+[[params.social]]
+url = "/blog/index.xml"
+fa_icon = "fa fa-rss"
+
+
+[permalinks]
+  post = "/:year/:month/:day/:filename/"
