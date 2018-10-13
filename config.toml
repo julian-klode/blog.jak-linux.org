@@ -22,7 +22,6 @@ avatarImage = "/images/avatar.jpg"
 [params.head]
 addOpenGraph = true
 addTwitterCard = true
-addSchema = true
 
 [[params.social]]
 url = "https://github.com/julian-klode"
