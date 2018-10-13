@@ -19,6 +19,11 @@ Powered by <a href="https://gohugo.io/tools/">Hugo</a>, the <a href="https://git
 mastodonUser = "juliank"
 avatarImage = "/images/avatar.jpg"
 
+[params.head]
+addOpenGraph = true
+addTwitterCard = true
+addSchema = true
+
 [[params.social]]
 url = "https://github.com/julian-klode"
 fa_icon = "fab fa-github"
