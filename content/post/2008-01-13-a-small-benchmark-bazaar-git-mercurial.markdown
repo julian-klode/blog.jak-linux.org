@@ -11,7 +11,7 @@ categories:
 
 I just performed some benchmark on Bazaar, Git and Mercurial. This is a very small benchmark, I may publish a more detailed one in a few weeks.
 
-[vcs-performance.pdf](http://juliank.files.wordpress.com/2008/01/vcs-performance.pdf)
+[vcs-performance.pdf](/images/2008-01-13-a-small-benchmark-bazaar-git-mercurial/vcs-performance.pdf)
 
 Some notes:
 

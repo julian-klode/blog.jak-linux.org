@@ -14,8 +14,8 @@ The 2.30 version of gnome-icon-theme is really one of the worst icon themes I've
 For now, I downgraded gnome-icon-theme to 2.28 to have a usable UI again. But once there are new icons in gnome-icon-theme I will be lost. Hopefully someone with a sense for UI design will fix this "design hell" created by <del>the idiots</del> those who created this icon theme. We don't need a 90s icon theme.
 
 **Update:** Here's one problem, the network icon just does not fit:
-[![](http://juliank.files.wordpress.com/2010/04/icons.png)
-](http://juliank.files.wordpress.com/2010/04/icons.png) (not under the same license as the blog, due to legal reasons).
+[![](/images/2010-04-20-gnome-icon-theme-2-30-looks-really-ugly/icons.png)
+](/images/2010-04-20-gnome-icon-theme-2-30-looks-really-ugly/icons.png) (not under the same license as the blog, due to legal reasons).
 
 **Update 2:** I don't like changes, but after a months or so I will probably accept it. Anyway, Google did even worse things with reordering the icons in Chromium 5. Previously, all actions were on the left (IIRC); now some are on the left, and some in the input box. Anyway, I replaced "the idiots" with "those" now, as some people felt this was overly offensive.
 

@@ -11,8 +11,8 @@ categories:
 
 Today, I received my Acer Chromebook 13, in the glorious FullHD variant with 4GB RAM. For those of you who don't know it, the Acer Chromebook 13 is a 13.3 inch chromebook powered by a Tegra K1 cpu.
 
-[![Chromebook](http://juliank.files.wordpress.com/2014/10/chromebook.jpg?w=284)
-](http://juliank.files.wordpress.com/2014/10/chromebook.jpg)
+[![Chromebook](/images/2014-10-02-acer-chromebook-13-fhd-initial-impressions/chromebook.jpg?w=284)
+](/images/2014-10-02-acer-chromebook-13-fhd-initial-impressions/chromebook.jpg)
 
 This version cannot be ordered currently, only pre-orders were shipped yesterday (at least here in Germany). I cannot even review it on Amazon (despite having it bought there), as they have not enabled reviews for it yet.
 

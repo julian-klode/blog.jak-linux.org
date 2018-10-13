@@ -26,8 +26,8 @@ tags:
 
 Yesterday was my 21st birthday, and I received all "Hitchhiker's Guide to the Galaxy" novels, the five ones in one book, and the sixth one written by Eoin Colfer in another book. Needless to say, the first book weights more than an N900. I did not read them yet, so now is the perfect chance to do so. Yes, I did not know that 25th is towel day, sorry for that.
 
-[![](http://juliank.files.wordpress.com/2011/05/20110529_001.jpg?w=300)
-](http://juliank.files.wordpress.com/2011/05/20110529_001.jpg)
+[![](/images/2011-05-30-015-1365/20110529_001.jpg?w=300)
+](/images/2011-05-30-015-1365/20110529_001.jpg)
 
 I also bought a Toshiba AC100 before my birthday, a Tegra 2 based notebook/netbook/"web companion" with 1 GHz dual core ARM Cortex A9 chip and 512 MB RAM. It runs Android by default, and had a price of 160€ which is low compared to anything else with Cortex A9. It currently runs Ubuntu 11.04 with a specialised kernel 2.6.37 from time to time, without sound and accelerated video (and not functioning HDMI). Mostly waiting for Nvidia to release a new binary blob for the video part (And yes, if you just want to build packages, you can probably get happy without those things).
 
