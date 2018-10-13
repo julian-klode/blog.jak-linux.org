@@ -1,3 +1,10 @@
+# Protect your privacy
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set X-Xss-Protection "1; mode=block"
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "no-referrer"
+
+
 AddCharset utf-8 .html .css .php .txt .js .xml
 
 # Enable rewrites
