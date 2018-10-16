@@ -16,7 +16,7 @@ This release series moves https support from apt-transport-https into apt proper
 
 Unattended updates and upgrades now work better: The dependency on network-online was removed and we introduced a meta wait-online helper with support for NetworkManager, systemd-networkd, and connman that allows us to wait for network even if we want to run updates directly after a resume (which might or might not have worked before, depending on whether update ran before or after network was back up again). This also improves a boot performance regression for systems with rc.local files:
 
-The rc.local.service unit specified After=network-online.target, and login stuff was After=rc.local.service, and apt-daily.timer was Wants=network-online.target, causing network-online.target to be pulled into the boot and the rc.local.service ordering dependency to take effect, significantly slowing down the boot.
+The rc.local.service unit specified `After=network-online.target`, and login stuff was `After=rc.local.service`, and apt-daily.timer was `Wants=network-online.target`, causing network-online.target to be pulled into the boot and the rc.local.service ordering dependency to take effect, significantly slowing down the boot.
 
 An earlier less intrusive variant of that fix is in 1.4.8: It just moves the network-online.target Want/After from apt-daily.timer to apt-daily.service so most boots are uncoupled now. I hope we get the full solution into stretch in a later point release, but we should gather some experience first before discussing this with the release time.
 

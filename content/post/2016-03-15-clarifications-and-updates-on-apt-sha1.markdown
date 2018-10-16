@@ -14,7 +14,6 @@ The APT 1.2.7 release is out now.
 
 Despite of what I wrote earlier, we now print warnings for Release files signed with signatures using SHA1 as the digest algorithm. This involved extending the protocol APT uses to communicate with the methods a bit, by adding a new 104 Warning message type.
 
-    
     W: gpgv:/var/lib/apt/lists/apt.example.com_debian_dists_sid_InRelease: The repository is insufficiently signed by key
     1234567890ABCDEF0123456789ABCDEF01234567 (weak digest)
     

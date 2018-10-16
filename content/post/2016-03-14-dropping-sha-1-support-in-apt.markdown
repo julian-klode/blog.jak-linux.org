@@ -22,7 +22,7 @@ Summary
 
 
 
-	  * Tomorrow: Disabling SHA1 support for Release, Packages, Sources files
-	  * June/July/August: Disabling SHA1 support for GPG signatures (InRelease/Release.gpg) in development releases
-	  * January 2017: Disabling SHA1 support for GPG signatures in Ubuntu 16.04 LTS via a stable-release-update.
+  * Tomorrow: Disabling SHA1 support for Release, Packages, Sources files
+  * June/July/August: Disabling SHA1 support for GPG signatures (InRelease/Release.gpg) in development releases
+  * January 2017: Disabling SHA1 support for GPG signatures in Ubuntu 16.04 LTS via a stable-release-update.
 

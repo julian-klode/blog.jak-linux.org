@@ -24,3 +24,4 @@ I'm not sure how the WebDAV thing will work once I want to prune things, I suspe
 I also have an external encrypted HDD which I can take backups on, it currently houses a fuller backup of $HOME that also includes Downloads, the Android SDK, and the IDEs for quicker recovery. Downloads changes a lot, and all of them can be fairly easily re-retrieved from the internet as needed, so there's not much point in painfully uploading them to a WebDAV backup site.
 
 
+*Update*: I can't recommend this. Get a service that has native borg support such as [rsync.net](https://www.rsync.net/products/attic.html) or a storage box at [hetzner](https://wiki.hetzner.de/index.php/BorgBackup/en).

@@ -74,17 +74,15 @@ Secondly, we only insert breaks only between cases. Initially, each case ended w
 Finally, we build one trie per word length, and switch by the word length first. Like the 32 trick, his gives a huge improvement in performance.
 
 
-### Digging into the assembler code
+## Digging into the assembler code
 
 
 The whole code translates to roughly 4 instructions per byte:
 
-
-
-	  1. A memory load,
-	  2. an or with 32
-	  3. a comparison, and
-	  4. a conditional jump.
+  1. A memory load,
+  2. an or with 32
+  3. a comparison, and
+  4. a conditional jump.
 
 (On x86, the case sensitive version actually only has a cmp-with-memory and a conditional jump).
 
@@ -95,165 +93,81 @@ Due to [https://gcc.gnu.org/bugzilla/show_bug.cgi?id=77729](https://gcc.gnu.org
 
 
 I run the hash against all 82 words understood by APT in Packages and Sources files, 1,000,000 times for each word, and summed up the average run-time:
-<table >
 
-<tr >
-host
-arch
-Trie
-TrieCase
-GPerfCase
-GPerf
-DJB
-</tr>
-
-<tbody >
-<tr >
-
-<td >plummer
-</td>
-
-<td >ppc64el
-</td>
-
-<td >540
-</td>
-
-<td >601
-</td>
-
-<td >1914
-</td>
-
-<td >2000
-</td>
-
-<td >1345
-</td>
-</tr>
-<tr >
-
-<td >eller
-</td>
-
-<td >mipsel
-</td>
-
-<td >4728
-</td>
-
-<td >5255
-</td>
-
-<td >12018
-</td>
-
-<td >7837
-</td>
-
-<td >4087
-</td>
-</tr>
-<tr >
-
-<td >asachi
-</td>
-
-<td >arm64
-</td>
-
-<td >1000
-</td>
-
-<td >1603
-</td>
-
-<td >4333
-</td>
-
-<td >2401
-</td>
-
-<td >1625
-</td>
-</tr>
-<tr >
-
-<td >asachi
-</td>
-
-<td >armhf
-</td>
-
-<td >1230
-</td>
-
-<td >1350
-</td>
-
-<td >5593
-</td>
-
-<td >5002
-</td>
-
-<td >1784
-</td>
-</tr>
-<tr >
-
-<td >barriere
-</td>
-
-<td >amd64
-</td>
-
-<td >689
-</td>
-
-<td >950
-</td>
-
-<td >3218
-</td>
-
-<td >1982
-</td>
-
-<td >1776
-</td>
-</tr>
-<tr >
-
-<td >x230
-</td>
-
-<td >amd64
-</td>
-
-<td >465
-</td>
-
-<td >504
-</td>
-
-<td >1200
-</td>
-
-<td >837
-</td>
-
-<td >693
-</td>
-</tr>
-</tbody>
+<table>
+  <tr>
+    <td>host</td>
+    <td>arch</td>
+    <td>Trie</td>
+    <td>TrieCase</td>
+    <td>GPerfCase</td>
+    <td>GPerf</td>
+    <td>DJB</td>
+  </tr>
+  <tbody>
+    <tr>
+      <td>plummer</td>
+      <td>ppc64el</td>
+      <td>540</td>
+      <td>601</td>
+      <td>1914</td>
+      <td>2000</td>
+      <td>1345</td>
+    </tr>
+    <tr>
+      <td>eller</td>
+      <td>mipsel</td>
+      <td>4728</td>
+      <td>5255</td>
+      <td>12018</td>
+      <td>7837</td>
+      <td>4087</td>
+    </tr>
+    <tr>
+      <td>asachi</td>
+      <td>arm64</td>
+      <td>1000</td>
+      <td>1603</td>
+      <td>4333</td>
+      <td>2401</td>
+      <td>1625</td>
+    </tr>
+    <tr>
+      <td>asachi</td>
+      <td>armhf</td>
+      <td>1230</td>
+      <td>1350</td>
+      <td>5593</td>
+      <td>5002</td>
+      <td>1784</td>
+    </tr>
+    <tr>
+      <td>barriere</td>
+      <td>amd64</td>
+      <td>689</td>
+      <td>950</td>
+      <td>3218</td>
+      <td>1982</td>
+      <td>1776</td>
+    </tr>
+    <tr>
+      <td>x230</td>
+      <td>amd64</td>
+      <td>465</td>
+      <td>504</td>
+      <td>1200</td>
+      <td>837</td>
+      <td>693</td>
+    </tr>
+  </tbody>
 </table>
+
 Suffice to say, GPerf does not really come close.
 
 All hosts except the x230 are Debian porterboxes. The x230 is my laptop with a a Core i5-3320M, barriere has an Opteron 23xx. I included the DJB hash function for another reference.
 
 
-### Source code
+## Source code
 
 
 The generator is written in Perl, licensed under the MIT license and available from [https://github.com/julian-klode/triehash](https://github.com/julian-klode/triehash) - I initially prototyped it in Python, but guillem complained that this would add new build dependencies to dpkg, so I rewrote it in Perl.
@@ -261,7 +175,7 @@ The generator is written in Perl, licensed under the MIT license and available f
 Benchmark is available from [https://github.com/julian-klode/hashbench](https://github.com/julian-klode/hashbench)
 
 
-### Usage
+## Usage
 
 
 See the script for POD documentation.

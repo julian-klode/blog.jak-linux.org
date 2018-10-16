@@ -20,10 +20,8 @@ DNS66 creates a local VPN service on your Android device, and diverts all DNS tr
 
 You can find DNS66 here:
 
-
-
-	  * on GitHub: [https://github.com/julian-klode/dns66](https://github.com/julian-klode/dns66)
-	  * on F-Droid: [https://f-droid.org/app/org.jak_linux.dns66](https://f-droid.org/app/org.jak_linux.dns66)
+  * on GitHub: [https://github.com/julian-klode/dns66](https://github.com/julian-klode/dns66)
+  * on F-Droid: [https://f-droid.org/app/org.jak_linux.dns66](https://f-droid.org/app/org.jak_linux.dns66)
 
 F-Droid is the recommended source to install from. DNS66 is licensed under the GNU GPL 3, or (mostly) any later version.
 
@@ -31,7 +29,7 @@ F-Droid is the recommended source to install from. DNS66 is licensed under the 
 ## Implementation Notes
 
 
-DNS66's core logic is based on another project,  [dbrodie/AdBuster](https://github.com/dbrodie/AdBuster), which arguably has the cooler name. I translated that from Kotlin to Java, and cleaned up the implementation a bit:
+DNS66's core logic is based on another project, [dbrodie/AdBuster](https://github.com/dbrodie/AdBuster), which arguably has the cooler name. I translated that from Kotlin to Java, and cleaned up the implementation a bit:
 
 All work is done in a single thread by using poll() to detect when to read/write stuff. Each DNS request is sent via a new UDP socket, and poll() polls over all UDP sockets, a Device Socket (for the VPN's tun device) and a pipe (so we can interrupt the poll at any time by closing the pipe).
 

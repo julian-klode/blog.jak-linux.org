@@ -18,10 +18,7 @@ In APT repositories, we effectively only have a snapshots rule - the only thing 
 
 Let's check the [attacks TUF protects again](https://github.com/theupdateframework/tuf/blob/develop/docs/tuf-spec.md#1-introduction):
 
-
-
-
-	  * Arbitrary installation attacks. - We protect against that with the outer signature and hashes
+  * Arbitrary installation attacks. - We protect against that with the outer signature and hashes
   * Endless data attacks. - Yes, we impose a limit on Release files (the sizes of other files are specified in there and this file is signed)
   * Extraneous dependencies attacks - That's verified by the signed hashes of Packages files
   * Fast-forward attacks - same

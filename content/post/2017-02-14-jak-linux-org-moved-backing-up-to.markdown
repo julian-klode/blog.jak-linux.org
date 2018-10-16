@@ -18,9 +18,7 @@ And, for those of you who don't know: uberspace is a shared hoster that basicall
 I'm considering migrating the blog away from wordpress at some point in the future - having a more integrated experience is a bit nicer than having my web presence split over two sites. I'm unsure if I shouldn't add something like cloudflare there - I don't want to overload the servers (but I only serve static pages, so how much load is this really going to get?).
 
 
-
-### in other news: off-site backups
-
+## in other news: off-site backups
 
 I also recently started doing offsite backups via borg to a server operated by the wonderful [rsync.net](http://rsync.net/). For those of you who do not know rsync.net: You basically get SSH to a server where you can upload your backups via common tools like rsync, scp, or you can go crazy and use git-annex, borg, attic; or you could even just plain `zfs send` your stuff there.
 
