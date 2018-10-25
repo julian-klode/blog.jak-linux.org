@@ -193,7 +193,7 @@ But meh.
 The fourth part was about converting some directory indexes I had. For example,
 `[[!map pages="projects/dir2ogg/0.12/* and ! projects/dir2ogg/0.12/*/*"]]` generated
 a list of all files in `projects/dir2ogg/0.12`. There was a very useful shortcode
-for that posted on the Hugo documentation, I did [a variant of it]() and then converted
+for that posted on the Hugo documentation, I did [a variant of it](https://github.com/julian-klode/jak-linux.org/blob/f1d5e4d48046ff08d7612de5fa44e06b3c8c6be6/layouts/shortcodes/directoryindex.html) and then converted
 pages like this to `{{</* directoryindex path="/static/projects/dir2ogg/0.12" pathURL="/projects/dir2ogg/0.12" */>}}`. As
 a bonus, the new directory index also generates SHA256 hashes for all files!
 
