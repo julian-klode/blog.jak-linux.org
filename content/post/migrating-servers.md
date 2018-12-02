@@ -76,9 +76,11 @@ in up to half the time of the old one. Scalability also seems better:
 I tried various benchmarks, and achieved consistently higher concurrency
 ratings. A simple curl via https now takes 100ms instead of 200ms.
 
-Performance is still shitty from the west coast of the US or other
-places far away from Germany: Measuring from Oregon, it took 1.4s
-for a page to fully render (vs ~3s before).
+Performance is still suboptimal from the west coast of the US or other
+places far away from Germany, but got a lot better than before:
+Measuring from Oregon using webpagetest, it took 1.5s  for a page to
+fully render vs ~3.4s before. A CDN would surely be faster, but would
+lose the end-to-end encryption.
 
 ## Upcoming mail server
 The next step is to enable email. Setting up postfix with dovecot
