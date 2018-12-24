@@ -57,7 +57,6 @@ Conversions are the similar to casts in C and other languages. They are written 
 ```go
     TypeName(value)
 ```
-\label{sec:conversions}
 
 ### Constants
 
