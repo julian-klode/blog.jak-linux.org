@@ -87,8 +87,8 @@ and a bunch of Lua plugins, such as:
 
 It also has a nice web UI:
 
-{{< figure src="rspamd-status.png" caption="rspamd web ui status" >}}
-{{< figure src="rspamd-spam.png" caption="rspamd web ui investigating a spam message" >}}
+{{< figure src="/2019/01/05/setting-up-an-email-server-part1/rspamd-status.png" caption="rspamd web ui status" >}}
+{{< figure src="/2019/01/05/setting-up-an-email-server-part1/rspamd-spam.png" caption="rspamd web ui investigating a spam message" >}}
 
 Setting up rspamd is quite easy. You basically just drop a bunch of configuration
 overrides into `/etc/rspamd/local.d` and you're done. Heck, it mostly works out of
