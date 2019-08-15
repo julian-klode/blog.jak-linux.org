@@ -6,50 +6,50 @@ draft: true
 
 If you have ever used aptitude a bit more extensively on the command-line, you'll probably have come across its patterns. This week I spent some time implementing (some) patterns for apt, so you do not need aptitude for that, and I want to let you in on the details of this [merge request !74](https://salsa.debian.org/apt-team/apt/merge_requests/74).
 
-## what are patterns
+## so, what are patterns?
 
-Patterns allow you to specify complex search queries to select the packages you want to install/show. 
+Patterns allow you to specify complex search queries to select the packages you want to install/show.
 For example, the pattern `?garbage` can be used to find all packages that have been automatically installed but are no longer depended upon by manually installed packages.
 Or the pattern `?automatic` allows you find all automatically installed packages.
 
-You can make this more complex by combining patterns, for example,
-`?and(?automatic,?obsolete)` matches all automatically installed packages not longer in a repository.
+You can combine patterns into more complex ones; for example, `?and(?automatic,?obsolete)` matches all automatically installed packages that do not exist any longer in a repository.
 
-There are also explicit targets, so you can query stuff like `?for x: ?depends(?recommends(x))` which finds you all packages `x` that depend on another package that recommends `x`. 
-I do not fully comprehend those yet - I did not manage to create a pattern that matches all manually installed packages that a metapackage depends upon. I am not sure it is possible.
+There are also explicit targets, so you can perform queries like `?for x: ?depends(?recommends(x))`:
+Find all packages `x` that depend on another package that recommends `x`.
+I do not fully comprehend those yet - I did not manage to create a pattern that matches all manually installed packages that a meta-package depends upon. I am not sure it is possible.
 
 ## reducing pattern syntax
 
-aptitude's syntax for patterns is heavily context-sensitive. If you have a pattern `?foo(?bar)` it can have two possible meanings:
+aptitude's syntax for patterns is quite context-sensitive. If you have a pattern `?foo(?bar)` it can have two possible meanings:
 
-1.  If `?foo` takes arguments (like `depends` did), then `?bar` is the argument.
+1.  If `?foo` takes arguments (like `?depends` did), then `?bar` is the argument.
 2.  Otherwise, `?foo(?bar)` is equivalent to `?foo?bar` which is short for `?and(?foo,?bar)`
 
-There are other shorthands too. For example, you could write `~c` instead of config-files, or `~m` for automatic; then combine them like `~m~c`.
+I find that very confusing.
+So, when looking at implementing patterns in APT, I went for a different approach.
+I first parse the pattern into a generic parse tree, without knowing anything about the semantics, and then I convert the parse tree into a `APT::CacheFilter::Matcher`, an object that can match against packages.
 
-I find that very confusing. When looking at implementing patterns in APT, I went for a different approach. 
-I first parse the pattern into a generic parse tree, without knowing anything about the semantics, and then I convert the parse tree into a `APT::CacheFilter::Matcher`, an object that can match against packages. 
-I also only implemented long patterns, not short ones (or concatenation for `?and`).
+This is useful, because the syntactic structure of the pattern can be seen, without having to know which patterns have arguments and which do not - basically, for the parser `?foo` and `?foo()` are the same thing.
+That said, the second pass knows whether a pattern accepts arguments or not and insists on you adding them if required and not having them if it does not accept any, to prevent you from confusing yourself.
 
-So in our example above, `?foo(?bar)` cannot mean `?foo?bar` as we 
+aptitude also supports shortcuts. For example, you could write `~c` instead of config-files, or `~m` for automatic; then combine them like `~m~c` instead of using `?and`. I have not implemented these short patterns for now, focusing instead on getting the basic functionality working.
 
-1. do not support concatenation for `?and`. 
-2. automatically parse `(` as the argument list, no matter whether `?foo` supports arguments or not
+So in our example `?foo(?bar)` above, we can immediately dismiss parsing that as `?foo?bar`:
 
-This is useful, because the syntactic structure of the pattern can be seen, without having to know which patterns have arguments and which do not.
+1. we do not support concatenation instead of `?and`.
+2. we automatically parse `(` as the argument list, no matter whether `?foo` supports arguments or not
 
-That said, the second pass knows whether a pattern accepts arguments or not and insists on you adding them if required and not having them if it does not accept any.
 
 {{< figure src="/2019/08/15/apt-patterns/parser-error.png" caption="apt not understanding invalid patterns" >}}
 
 ## Supported syntax
 
-At the moment, APT supports two kinds of patterns: Basic logic ones like `?and`, and patterns that apply to an entire package as opposed to a specific version. 
+At the moment, APT supports two kinds of patterns: Basic logic ones like `?and`, and patterns that apply to an entire package as opposed to a specific version.
 This was done as a starting point for the merge, patterns for versions will come in the next round.
 
-We also do not have any support for explicit search targets yet - as explained, I do not yet fully understand them, and hence do not want to commit on them.
+We also do not have any support for explicit search targets such as `?for x: ...` yet - as explained, I do not yet fully understand them, and hence do not want to commit on them.
 
-The full list of the first round of patterns is below, helpfully converted from docbook to markdown by pandoc.
+The full list of the first round of patterns is below, helpfully converted from the `apt-patterns(7)` docbook to markdown by pandoc.
 
 ### logic patterns
 
@@ -163,3 +163,7 @@ There also is the fallback to `fnmatch()`: Currently, if apt cannot find a packa
 Maybe I should allow using `[]` instead of `()` so larger patterns become more readable, and/or some support for comments.
 
 There are also plans for _AppStream_ based patterns. This would allow you to use `apt install ?provides-mimetype(text/xml)` or `apt install ?provides-lib(libfoo.so.2)`. It's not entirely clear how to package this though, we probably don't want to have `libapt-pkg` depend directly on `libappstream`.
+
+## feedback
+
+Talk to me on IRC, comment on the Mastodon thread, or send me an email if there's anything you think I'm missing or should be looking at.
