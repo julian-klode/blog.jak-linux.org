@@ -1,7 +1,6 @@
 ---
 title: "APT Patterns"
 date: 2019-08-15T15:55:47+02:00
-draft: true
 ---
 
 If you have ever used aptitude a bit more extensively on the command-line, you'll probably have come across its patterns. This week I spent some time implementing (some) patterns for apt, so you do not need aptitude for that, and I want to let you in on the details of this [merge request !74](https://salsa.debian.org/apt-team/apt/merge_requests/74).
