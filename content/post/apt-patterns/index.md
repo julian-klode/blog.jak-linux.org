@@ -149,7 +149,7 @@ These patterns select specific packages.
 Some things are not yet where I want them:
 
 -  `?architecture` does not support `all`, `native`, or `same`
--  `?installed` should match only the installed version of the package, not the entire package (that is what aptitude does, and it's a bit surprising that `?installed` impl)
+-  `?installed` should match only the installed version of the package, not the entire package (that is what aptitude does, and it's a bit surprising that `?installed` implies a version and `?upgradable` does not)
 
 
 ## the future
