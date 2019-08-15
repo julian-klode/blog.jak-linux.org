@@ -165,4 +165,4 @@ There are also plans for _AppStream_ based patterns. This would allow you to use
 
 ## feedback
 
-Talk to me on IRC, comment on the Mastodon thread, or send me an email if there's anything you think I'm missing or should be looking at.
+Talk to me on IRC, comment on the [Mastodon thread](https://mastodon.social/@juliank/102622465371813752), or send me an email if there's anything you think I'm missing or should be looking at.
