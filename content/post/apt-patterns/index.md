@@ -161,3 +161,5 @@ Another thing I want to do ASAP is to disable fallback to regular expressions wh
 There also is the fallback to `fnmatch()`: Currently, if apt cannot find a package with the specified name using the exact name or the regex, it would fall back to interpreting the argument as a `glob(7)` pattern. For example, `apt install apt*` would fallback to installing every package starting with `apt` if there is no package matching that as a regular expression. We can actually keep those in place, as the `glob(7)` syntax does not overlap with valid package names.
 
 Maybe I should allow using `[]` instead of `()` so larger patterns become more readable, and/or some support for comments.
+
+There are also plans for _AppStream_ based patterns. This would allow you to use `apt install ?provides-mimetype(text/xml)` or `apt install ?provides-lib(libfoo.so.2)`. It's not entirely clear how to package this though, we probably don't want to have `libapt-pkg` depend directly on `libappstream`.
