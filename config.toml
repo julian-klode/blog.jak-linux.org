@@ -6,14 +6,14 @@ canonifyURLs = true
 relativeURLS = false
 enableGitInfo = true
 copyright = """
-Copyright © 2018 Julian Andres Klode, articles licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.<br/>
+Copyright © 2018-2020 Julian Andres Klode, articles licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.<br/>
 Comments are provided by <a href="https://joinmastodon.org">Mastodon</a> and copyright of their authors.<br/><br/>
 
 This website does not store any personally identifiable information. As part of standard web server
 access_log logging, it stores requests and the user agents and shortened IP addresses used to make
 them. It does, however, load some avatars from mastodon.<br/><br/>
 
-Powered by <a href="https://gohugo.io/tools/">Hugo</a>, the <a href="https://github.com/julian-klode/ernest/">Ernest</a> theme.
+Powered by <a href="https://gohugo.io/tools/">Hugo</a>, and the <a href="https://github.com/julian-klode/ernest/">Ernest</a> theme.
 """
 
 [params]
