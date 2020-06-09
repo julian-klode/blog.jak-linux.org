@@ -1,3 +1,5 @@
+export GIT_CONFIG_NOSYSTEM=1
+
 all: remote
 
 local:
