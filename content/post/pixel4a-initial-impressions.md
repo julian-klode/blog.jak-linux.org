@@ -32,6 +32,8 @@ The buttons on the side are very loud and clicky. As is the vibration motor. I w
 
 The plastic back feels really good, it's that sort of high quality smooth plastic you used to see on those high-end Nokia devices.
 
+The finger print reader, is super fast. Setup just takes a few seconds per finger, and it works reliably. Other phones (OnePlus 6, Mi A1/A2) take like half a minute or a minute to set up.
+
 ### Software
 
 The software - stock Android 11 - is fairly similar to OnePlus' OxygenOS. It's a clean experience, without a ton of added bloatware (even OnePlus now ships Facebook out of box, eww). It's cleaner than OxygenOS in some way - there are no duplicate photos apps, for example. On the other hand, it also has quite a bunch of Google stuff I could not care less about like YT Music. To be fair, those are minor noise once all 130 apps were transferred from the old phone.
