@@ -28,6 +28,14 @@ or to avoid downloading as root:
 
 	wget -qO-  https://myrepo.example/myrepo.asc | sudo tee -a /etc/apt/trusted.gpg.d/myrepo.asc
 
+wget might not be available everywhere so you can use apt-helper:
+
+    sudo /usr/lib/apt/apt-helper download-file https://myrepo.example/myrepo.asc /etc/apt/trusted.gpg.d/myrepo.asc
+
+or, to avoid downloading as root:
+
+    /usr/lib/apt/apt-helper download-file https://myrepo.example/myrepo.asc /tmp/myrepo.asc && sudo mv /tmp/myrepo.asc /etc/apt/trusted.gpg.d
+
 Older (and all) releases only support unarmored files with an extension .gpg. If you care about them, provide one, and use
 
 	sudo wget -qO /etc/apt/trusted.gpg.d/myrepo.gpg https://myrepo.example/myrepo.gpg
@@ -40,7 +48,8 @@ People say it's good practice to _not_ use `trusted.gpg.d` and install the file 
 by using `signed-by=<path to the file>`. So this looks a lot safer, because now your key can't sign other unrelated repositories. In
 practice, security increase is minimal, since package maintainer scripts run as root anyway. But I guess it's better for publicity :)
 
-As an example, here are the instructions to install `signal-desktop` from signal.org. As mentioned, `gpg --dearmor` use in there is not a good idea, and I'd personally not tell people to modify `/usr` as it's supposed to be managed by the package manager, but we don't have an `/etc/apt/keyrings` or similar at the moment; it's fine though if the keyring is installed by the package.
+As an example, here are the instructions to install `signal-desktop` from signal.org. As mentioned, `gpg --dearmor` use in there is not a good idea, and I'd personally not tell people to modify `/usr` as it's supposed to be managed by the package manager, but we don't have an `/etc/apt/keyrings` or similar at the moment; it's fine though if the keyring is installed by the package. You can also just add the file there as a starting point, and then install
+a keyring package overriding it (pretend there is a signal-desktop-keyring package below that would override the .gpg we added).
 
 	# NOTE: These instructions only work for 64 bit Debian-based
 	# Linux distributions such as Ubuntu, Mint etc.
