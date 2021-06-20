@@ -28,6 +28,12 @@ or to avoid downloading as root:
 
 	wget -qO-  https://myrepo.example/myrepo.asc | sudo tee -a /etc/apt/trusted.gpg.d/myrepo.asc
 
+Older (and all) releases only support unarmored files with an extension .gpg. If you care about them, provide one, and use
+
+	sudo wget -qO /etc/apt/trusted.gpg.d/myrepo.gpg https://myrepo.example/myrepo.gpg
+
+Some people will tell you to download the `.asc` and pipe it to `gpg --dearmor`, but `gpg` might not be installed, so really, just offer a `.gpg` one instead that is supported on all systems.
+
 wget might not be available everywhere so you can use apt-helper:
 
     sudo /usr/lib/apt/apt-helper download-file https://myrepo.example/myrepo.asc /etc/apt/trusted.gpg.d/myrepo.asc
@@ -35,12 +41,6 @@ wget might not be available everywhere so you can use apt-helper:
 or, to avoid downloading as root:
 
     /usr/lib/apt/apt-helper download-file https://myrepo.example/myrepo.asc /tmp/myrepo.asc && sudo mv /tmp/myrepo.asc /etc/apt/trusted.gpg.d
-
-Older (and all) releases only support unarmored files with an extension .gpg. If you care about them, provide one, and use
-
-	sudo wget -qO /etc/apt/trusted.gpg.d/myrepo.gpg https://myrepo.example/myrepo.gpg
-
-Some people will tell you to download the `.asc` and pipe it to `gpg --dearmor`, but `gpg` might not be installed, so really, just offer a `.gpg` one instead that is supported on all systems.
 
 ## Pretending to be safer by using signed-by
 
