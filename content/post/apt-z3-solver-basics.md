@@ -106,7 +106,7 @@ The translation in Z3 rules looks like this:
     1. `atmost({a1}, 1)` - only one version may be installed
     1. `a` -- a must be installed
 1. Dependency rules for `a`
-    1. `implies(a1, atleast({b2, b1})` -- the translated dependency above. note that `c` is gone, it's not reachable.
+    1. `implies(a1, atleast({b2, b1}, 1))` -- the translated dependency above. note that `c` is gone, it's not reachable.
 1. Package rules for `b`:
     1. `b == atleast({b1,b2}, 1)` - package is installed iff one version is
     1. `atmost({b1, b2}, 1)` - only one version may be installed
