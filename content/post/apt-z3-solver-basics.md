@@ -3,7 +3,7 @@ title: "APT Z3 Solver Basics"
 date: 2021-11-21T20:49:34+01:00
 ---
 
-Z3 is a theorem proofer developed at Microsoft research and available as
+[Z3](https://github.com/Z3Prover/z3) is a theorem prover developed at Microsoft research and available as
 a dynamically linked C++ library in Debian-based distributions. While the
 library is a whopping 16 MB, and the solver is a tad slow, it's permissive
 licensing, and number of tactics offered give it a huge potential for use
