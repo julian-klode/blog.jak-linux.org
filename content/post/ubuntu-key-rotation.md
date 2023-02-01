@@ -131,6 +131,12 @@ were not enough, I also forgot to include support for gzip compressed kernels th
 Sigh, I need better testing infrastructure to be able to easily run arm64 tests as
 well (I only tested the actual booting there, not the scripts).
 
+shim-signed migrated to the release pocket in lunar fairly quickly, but this caused
+images to stop working, because the new shim was installed into images, but no
+kernel was available yet, so we had to demote it to proposed and block migration.
+Despite all the work done for end users, we need to be careful to roll this out for
+image building.
+
 ## another grub update for OOM issues.
 
 We had two grubs to release: First there was the security update for the recent set
