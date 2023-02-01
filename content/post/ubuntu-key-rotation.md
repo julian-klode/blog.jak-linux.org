@@ -194,6 +194,18 @@ of `update-alternatives` as you did above after the reconfiguration has finished
 For the out of memory issues in grub, you need grub2-signed 1.187.3~ (same binaries
 as above).
 
+## how do I test this (while it's in proposed)?
+
+1. upgrade your kernel to proposed and reboot into that
+2. upgrade your grub-efi-amd64-signed, shim-signed, fwupd-signed to proposed.
+
+If you already upgraded your shim, don't worry:
+
+1. upgrade your kernel and reboot
+2. run dpkg-reconfigure shim-signed
+
+And you'll be all good to go.
+
 ## deep dive: uploading signed boot assets to Ubuntu
 
 For each signed boot asset, we build one version in the latest stable release and the
