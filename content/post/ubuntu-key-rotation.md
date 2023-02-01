@@ -2,6 +2,7 @@
 title: "Ubuntu 2022v1 secure boot key rotation and friends"
 date: 2023-02-01T14:40:27+01:00
 draft: true
+copyright: 2023 Canonical Ltd
 ---
 
 This is the story of the currently progressing changes to secure boot
@@ -35,6 +36,10 @@ them to a UEFI variable, and not everyone had enough space for such large variab
 Sigh.
 
 We decided we want to rotate our signing key next time.
+
+This was also when upstream added SBAT metadata to shim and grub. This gives
+a simple versioning scheme for security updates and easy revocation using a
+simple EFI variable that shim writes to and reads from.
 
 ## Spring 2022 CVEs
 
@@ -171,13 +176,50 @@ shimx64.efi.signed - auto mode
 /usr/lib/shim/shimx64.efi.signed.previous - priority 50
 ```
 
-If it doesn't but you have installed a new kernel compatible with the new shim, you can
+If it does not, but you have installed a new kernel compatible with the new shim, you can
 switch immediately to the new shim after rebooting into the kernel by running `dpkg-reconfigure
 shim-signed`. You'll see in the output if the shim was updated, or you can check the output
 of `update-alternatives` as you did above after the reconfiguration has finished.
 
 For the out of memory issues in grub, you need grub2-signed 1.187.3~ (same binaries
 as above).
+
+## deep dive: uploading signed boot assets to Ubuntu
+
+For each signed boot asset, we build one version in the latest stable release and the
+development release. We then binary copy the built binaries from the latest stable release
+to older stable releases. This process ensures two things: We know the next stable release
+is able to build the assets and we also minimize the number of signed assets.
+
+OK, I lied. For shim, we actually do not build in the development release but copy the
+binaries upward from the latest stable, as each shim needs to go through external signing.
+
+
+The entire workflow looks something like this:
+
+1. Upload the unsigned package to one of the following “build” PPAs:
+   - https://launchpad.net/~ubuntu-uefi-team/+archive/ubuntu/ppa for non-embargoed updates
+   - https://launchpad.net/~ubuntu-security-embargoed-shared/+archive/ubuntu/grub2 for embargoed updates
+2. Upload the signed package to the same PPA
+3. For stable release uploads:
+   - Copy the unsigned package back across all stable releases in the PPA
+   - Upload the signed package for stable releases to the same PPA with `~<release>.1` appended to the version
+4. Submit a request to canonical-signing-jobs to sign the uploads.
+
+   The signing job helper copies the binary -unsigned packages to the primary-2022v1 PPA where they are
+   signed, creating a signing tarball, then it copies the source package for the -signed package to the
+   same PPA which then downloads the signing tarball during build and places the signed assets into
+   the -signed deb.
+
+   Resulting binaries will be placed into the proposed PPA: https://launchpad.net/~ubuntu-uefi-team/+archive/ubuntu/proposed
+
+5. Review the binaries themselves
+6. Unembargo and binary copy the binaries from the proposed PPA to the proposed-public PPA: https://launchpad.net/~ubuntu-uefi-team/+archive/ubuntu/proposed-public.
+
+   This step is not strictly necessary, but it enables tools like sru-review to work, as they cannot access the packages from the normal private “proposed” PPA.
+7. Binary copy from proposed-public to the proposed queue(s) in the primary archive
+
+Lots of steps!
 
 ## WIP
 
