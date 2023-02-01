@@ -199,7 +199,7 @@ as above).
 1. upgrade your kernel to proposed and reboot into that
 2. upgrade your grub-efi-amd64-signed, shim-signed, fwupd-signed to proposed.
 
-If you already upgraded your shim, don't worry:
+If you already upgraded your shim before your kernel, don't worry:
 
 1. upgrade your kernel and reboot
 2. run dpkg-reconfigure shim-signed
