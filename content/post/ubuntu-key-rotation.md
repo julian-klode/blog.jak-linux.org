@@ -1,7 +1,6 @@
 ---
 title: "Ubuntu 2022v1 secure boot key rotation and friends"
 date: 2023-02-01T14:40:27+01:00
-draft: true
 copyright: 2023 Canonical Ltd
 ---
 
