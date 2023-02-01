@@ -153,6 +153,11 @@ also depends on the memory layout of your machine and your screen resolution and
 images. So OEM team had success testing 400MB irl, and I tested up to I think it was 1.2GB
 in qemu, I ran out of FAT space then and stopped going higher :D
 
+## other features in this round
+
+* Intel TDX support in grub and shim
+* Kernels are allocated as CODE now not DATA as per the upstream mm changes, might fix boot on X13s
+
 ## am I using this yet?
 
 The new signing keys are used in:
