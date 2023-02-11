@@ -26,19 +26,23 @@ addTwitterCard = true
 
 [[params.social]]
 url = "https://github.com/julian-klode"
-fa_icon = "fab fa-github"
+fa_icon = "brands/github"
+title = "GitHub"
 
 [[params.social]]
 url = "https://mastodon.social/@juliank"
-fa_icon = "fab fa-mastodon"
+fa_icon = "brands/mastodon"
+title = "Mastodon"
 
 [[params.social]]
 url = "https://twitter.com/JulianKlode"
-fa_icon = "fab fa-twitter"
+fa_icon = "brands/twitter"
+title = "Twitter"
 
 [[params.social]]
 url = "/index.xml"
-fa_icon = "fa fa-rss"
+fa_icon = "solid/rss"
+title = "RSS"
 
 
 [permalinks]
