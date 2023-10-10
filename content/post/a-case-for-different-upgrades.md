@@ -1,5 +1,5 @@
 ---
-title: "Divergence - A case for different upgrade approachs"
+title: "Divergence - A case for different upgrade approaches"
 date: 2023-10-10T19:22:49+02:00
 ---
 
