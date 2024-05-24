@@ -46,7 +46,7 @@ is quite clear: Keep back the upgrade of `A`.
 
 The new solver however sees two possible solutions:
 
-1. Install `X` to satisfy `X Depends A (= 1) | B`.
+1. Install `B` to satisfy `X Depends A (= 1) | B`.
 2. Keep back the upgrade of `A`
 
 Which one does it pick? This depends on the order in which it sees the upgrade action for A and the
