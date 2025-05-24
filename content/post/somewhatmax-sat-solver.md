@@ -1,6 +1,6 @@
 ---
 title: "A SomewhatMaxSAT Solver"
-date: 2025-05-24T12:14:58+02:00
+date: 2025-05-24T12:15:50+02:00
 ---
 
 **As you may recall** from previous posts and elsewhere I have been busy writing a new solver for APT.
@@ -83,7 +83,7 @@ To illustrate this in pseudo Python code:
             return True
         elif it := find("best unassigned literal satisfying a hard clause"):
             assume(it)
-        elif it := find("best literal satisfying a soft clause"):
+        elif it := find("best unassigned literal satisfying a soft clause"):
             assume(it)
     ```
 
