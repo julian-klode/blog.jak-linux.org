@@ -35,7 +35,6 @@ In the real world we may actually store this as a priority queue that we
 can delete from. Since we don't actually want to delete from the queue
 for real, our queue items are pairs of a pointer to dependency and an
 activitity level, say `A|B@1`.
-
 Whenever a variable is assigned false, we look at its reverse dependencies
 and bump their activity, and reinsert them (the priority of the item being
 determined by the leftmost solution still possible, it has now changed).
