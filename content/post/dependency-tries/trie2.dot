@@ -1,0 +1,12 @@
+digraph {
+
+    root [label=""];
+    bc [label="b|c"];
+    b [label="b"];
+    bx [label="b|x"];
+
+    root -> b [label="b"];
+    b -> bx [label="x"];
+    b -> bc [label="c"];
+}
+
