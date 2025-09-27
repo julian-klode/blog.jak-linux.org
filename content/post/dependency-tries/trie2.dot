@@ -1,8 +1,8 @@
 digraph {
 
     root [label=""];
-    bc [label="b|c"];
-    b [label="b"];
+    bc [label=<<s>a|</s>b|c>];
+    b [label=<<s>a|</s>b>];
     bx [label="b|x"];
 
     root -> b [label="b"];
