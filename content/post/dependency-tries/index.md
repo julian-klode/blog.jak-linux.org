@@ -4,12 +4,13 @@ date: 2025-09-27T16:32:19+02:00
 ---
 
 As I was shopping groceries I had a shocking realization: The active dependencies
-of packages in a solver actually form a trie (a dependency `A|B` of a package `X`
-is considered active if we marked `X` for install).
+of packages in a solver actually form a trie (a dependency `A|B` - "A or B" - of
+a package `X` is considered active if we marked `X` for install).
 
-Consider the dependencies `A|B|C`, `A|B`, `B|X`. In Debian packages, or expresses a
-preference relationship between its operands, so in `A|B|C`, `A` is preferred over `B`
-and `B` over `C` (and `A` transitively over `C`).
+Consider the dependencies `A|B|C`, `A|B`, `B|X`.
+In most package managers these just express alternatives, that is, the "or" relationship,
+but in Debian packages, it also expresses a preference relationship between its operands,
+so in `A|B|C`, `A` is preferred over `B` and `B` over `C` (and `A` transitively over `C`).
 
 This means that we can convert the three dependencies into a trie as follows:
 
