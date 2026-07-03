@@ -1,5 +1,5 @@
 baseURL = "https://blog.jak-linux.org"
-languageCode = "en-us"
+locale = "en-us"
 title = "Blog of Julian Andres Klode"
 theme = "ernest"
 canonifyURLs = true
@@ -19,6 +19,11 @@ Powered by <a href="https://gohugo.io/tools/">Hugo</a>, and the <a href="https:/
 [params]
 mastodonUser = "juliank"
 avatarImage = "/images/avatar.jpg"
+
+[params.author]
+name = "Julian Andres Klode"
+email = "jak@jak-linux.org"
+
 
 [params.head]
 addOpenGraph = true
@@ -46,4 +51,4 @@ title = "RSS"
 
 
 [permalinks]
-  post = "/:year/:month/:day/:filename/"
+  post = "/:year/:month/:day/:contentbasename/"
