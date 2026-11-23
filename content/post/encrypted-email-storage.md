@@ -49,19 +49,21 @@ def encrypt(message: email.message.Message, recipients: typing.List[str]) -> str
     # Build the parts
     enc = email.mime.application.MIMEApplication(
         _data=str(encrypted_content).encode(),
-        _subtype='octet-stream',
-        _encoder=email.encoders.encode_7or8bit)
+        _subtype="octet-stream",
+        _encoder=email.encoders.encode_7or8bit,
+    )
 
     control = email.mime.application.MIMEApplication(
-        _data=b'Version: 1\n',
+        _data=b"Version: 1\n",
         _subtype='pgp-encrypted; name="msg.asc"',
-        _encoder=email.encoders.encode_7or8bit)
-    control['Content-Disposition'] = 'inline; filename="msg.asc"'
+        _encoder=email.encoders.encode_7or8bit,
+    )
+    control["Content-Disposition"] = 'inline; filename="msg.asc"'
 
     # Put the parts together
     encmsg = email.mime.multipart.MIMEMultipart(
-        'encrypted',
-        protocol='application/pgp-encrypted')
+        "encrypted", protocol="application/pgp-encrypted"
+    )
     encmsg.attach(control)
     encmsg.attach(enc)
 
