@@ -14,7 +14,8 @@ but I did not want to write my own parser (and I deleted my old writer!).
 Instead of a custom library, I had to pick json-c as the backend.
 I then had to work around a whole ton of issues with json-c not being strict enough;
 heck that thing will read embedded NUL bytes in strings and then silently truncate them!
-So we had to implement a parser that understands strings and rejects "\u0000" as well as literal NUL bytes.
+So we had to implement a verification step that understands enough JSON to reject
+"\u0000" as well as literal NUL bytes in input strings.
 In an optimal world, I'd just use sd-varlink, but obviously it's not available on Hurd.
 
 This work just landed in main, and I want to share with you the concepts of the library.
