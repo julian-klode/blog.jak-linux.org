@@ -18,7 +18,8 @@ So we had to implement a verification step that understands enough JSON to rejec
 "\u0000" as well as literal NUL bytes in input strings.
 In an optimal world, I'd just use sd-varlink, but obviously it's not available on Hurd.
 
-This work just landed in main, and I want to share with you the concepts of the library.
+After two loooooooooooong sessions this weekend,
+this work just landed in main, and I want to share with you the concepts of the library.
 
 ## Core types
 APT::JSON provides two main types:
